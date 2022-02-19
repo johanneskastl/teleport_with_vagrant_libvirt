@@ -16,3 +16,4 @@
           - 'teleport'
           - 'teleport-tsh'
           - 'teleport-tctl'
+          - 'hostname'
