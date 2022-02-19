@@ -17,3 +17,50 @@
           - 'teleport-tsh'
           - 'teleport-tctl'
           - 'hostname'
+
+- name: 'Create script and configuration on teleport-server'
+  hosts: 'teleport-server'
+  gather_facts: 'yes'
+  become: 'true'
+
+  tasks:
+
+  - name: 'Create /usr/local/bin/create_certificate.sh'
+    template:
+      src: 'certificate.sh.j2'
+      dest: '/usr/local/bin/create_certificate.sh'
+      owner: 'root'
+      group: 'root'
+      mode: '0755'
+    notify:
+      - 'Restart the teleport service'
+
+  - name: 'create certificate'
+    command:
+      cmd: '/usr/local/bin/create_certificate.sh'
+      creates: '/var/lib/teleport/fullchain.pem'
+    notify:
+      - 'Restart the teleport service'
+
+  - name: 'Create /etc/teleport.yaml'
+    template:
+      src: 'teleport.yaml.j2'
+      dest: '/etc/teleport.yaml'
+      owner: 'root'
+      group: 'root'
+      mode: '0644'
+    notify:
+      - 'Restart the teleport service'
+
+  - name: 'Start the teleport service'
+    service:
+      name: 'teleport'
+      state: 'started'
+      enabled: 'true'
+
+  handlers:
+
+  - name: 'Restart the teleport service'
+    service:
+      name: 'teleport'
+      state: 'restarted'
