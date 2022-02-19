@@ -1,0 +1,18 @@
+---
+- name: 'Add home_ojkastl_buildservice_teleport repository containing teleport'
+  hosts: 'all'
+  gather_facts: 'yes'
+  become: 'true'
+
+  roles:
+    - role: 'add_zypper_repository'
+      vars:
+        repository_name: 'home_ojkastl_buildservice_teleport'
+        repository_baseurl: 'https://download.opensuse.org/repositories/home:/ojkastl_buildservice:/teleport/openSUSE_Leap_15.3'
+    - role: 'zypper_ref_accept_keys'
+    - role: 'install_one_or_more_packages'
+      vars:
+        packages_to_be_installed:
+          - 'teleport'
+          - 'teleport-tsh'
+          - 'teleport-tctl'
