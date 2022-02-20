@@ -20,7 +20,7 @@
 
     - name: 'Create /etc/teleport.yaml'
       template:
-        src: 'teleport.yaml.j2'
+        src: 'teleport-server.yaml.j2'
         dest: '/etc/teleport.yaml'
         owner: 'root'
         group: 'root'
