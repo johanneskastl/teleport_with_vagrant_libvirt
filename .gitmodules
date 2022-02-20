@@ -19,3 +19,6 @@
 [submodule "ansible/roles/minimal_bashrc"]
 	path = ansible/roles/minimal_bashrc
 	url = https://github.com/johanneskastl/ansible-role-minimal_bashrc.git
+[submodule "ansible/roles/create_a_vimrc"]
+	path = ansible/roles/create_a_vimrc
+	url = https://github.com/johanneskastl/ansible-role-create_a_vimrc.git
