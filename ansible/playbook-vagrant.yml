@@ -16,6 +16,12 @@
           - 'teleport'
           - 'teleport-tsh'
           - 'hostname'
+    - role: 'minimal_bashrc'
+      vars:
+        additional_users: "{{ ansible_user }}"
+    - role: 'create_a_vimrc'
+      vars:
+        additional_users: "{{ ansible_user }}"
 
 - name: 'Create certificate for teleport-server'
   hosts: 'teleport-server'
