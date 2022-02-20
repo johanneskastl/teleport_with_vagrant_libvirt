@@ -16,6 +16,8 @@ auth_service:
   proxy_listener_mode: multiplex
   authentication:
     second_factor: off
+  tokens:
+    - "node:very_insecure_token_that_should_not_be_used"
 ssh_service:
   enabled: "yes"
   labels:
