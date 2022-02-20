@@ -9,7 +9,7 @@ teleport:
       output: text
   auth_token: "very_insecure_token_that_should_not_be_used"
   auth_servers:
-    - {{ hostvars['teleport-server']['ansible_default_ipv4']['address'] }}:3025
+    - {{ hostvars['teleport-server']['ansible_default_ipv4']['address'] }}:443
 ssh_service:
   enabled: "yes"
   labels:
