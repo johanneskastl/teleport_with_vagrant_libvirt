@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   (1..W).each do |i|
 
     # name the VMs
-    config.vm.define "teleportnode#{i}" do |node|
+    config.vm.define "teleport-node#{i}" do |node|
 
       # which image to use
       node.vm.box = "opensuse/Leap-15.3.x86_64"
@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
       end
 
       # set the hostname
-      node.vm.hostname = "teleportnode#{i}"
+      node.vm.hostname = "teleport-node#{i}"
 
     end # config.vm.define nodes
 
@@ -53,7 +53,7 @@ Vagrant.configure("2") do |config|
       ansible.limit = "all"
       ansible.groups = {
         "teleport_servers"  => [ "teleport-server" ],
-        "teleport_nodes"   => [ "teleportnode1", "teleportnode2" ]
+        "teleport_nodes"   => [ "teleport-node1", "teleport-node2" ]
       }
       ansible.playbook = "ansible/playbook-vagrant.yml"
     end # node.vm.provision
