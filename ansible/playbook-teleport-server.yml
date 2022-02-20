@@ -5,6 +5,11 @@
 
   tasks:
 
+    - name: 'Install teleport-tctl package'
+      package:
+        name: 'teleport-tctl'
+        state: 'installed'
+
     - name: 'Create /usr/local/bin/create_certificate.sh'
       template:
         src: 'certificate.sh.j2'

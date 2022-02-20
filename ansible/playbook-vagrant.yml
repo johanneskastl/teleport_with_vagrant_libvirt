@@ -15,7 +15,6 @@
         packages_to_be_installed:
           - 'teleport'
           - 'teleport-tsh'
-          - 'teleport-tctl'
           - 'hostname'
 
 - name: 'Include teleport-server playbook'
