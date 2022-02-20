@@ -22,6 +22,12 @@ After that you can open the teleport-server's IP address in your browser, ignore
 You should see three "servers" in the "Server" tab.
 Tadaa!
 
+For testing, the two-factor-authentication is disabled, you can enable it by commenting out the following lines in the `teleport.yaml` on the teleport-server:
+```
+  authentication:
+    second_factor: off
+```
+
 ## Disabling the Ansible provisioning
 
 In case you do not want Ansible to install teleport (because you want to install it yourself), just comment out the following lines in the `Vagrantfile`:
