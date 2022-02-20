@@ -16,7 +16,7 @@
         state: 'directory'
         owner: 'root'
         group: 'root'
-        mode: '0755'
+        mode: '0750'
 
     - name: 'Create /etc/teleport.yaml'
       template:
@@ -24,7 +24,7 @@
         dest: '/etc/teleport.yaml'
         owner: 'root'
         group: 'root'
-        mode: '0644'
+        mode: '0600'
       notify:
         - 'Restart the teleport service'
 
