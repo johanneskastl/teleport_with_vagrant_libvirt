@@ -2,7 +2,7 @@ Vagrant.configure("2") do |config|
 
   ###################################################################################
   # define number of nodes
-  W = 1
+  W = 2
 
   # provision W VMs as nodes
   (1..W).each do |i|
@@ -53,7 +53,7 @@ Vagrant.configure("2") do |config|
       ansible.limit = "all"
       ansible.groups = {
         "teleport_servers"  => [ "teleport-server" ],
-        "teleport_nodes"   => [ "teleportnode1" ]
+        "teleport_nodes"   => [ "teleportnode1", "teleportnode2" ]
       }
       ansible.playbook = "ansible/playbook-vagrant.yml"
     end # node.vm.provision
