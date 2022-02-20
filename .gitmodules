@@ -13,3 +13,6 @@
 [submodule "ansible/roles/reboot"]
 	path = ansible/roles/reboot
 	url = https://github.com/johanneskastl/ansible-role-reboot.git
+[submodule "ansible/roles/selfsigned_demo_ca"]
+	path = ansible/roles/selfsigned_demo_ca
+	url = https://github.com/johanneskastl/ansible-role-selfsigned_demo_ca.git
