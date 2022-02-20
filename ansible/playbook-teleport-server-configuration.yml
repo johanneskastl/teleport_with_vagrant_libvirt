@@ -10,16 +10,6 @@
         name: 'teleport-tctl'
         state: 'installed'
 
-    - name: 'Create /usr/local/bin/create_certificate.sh'
-      template:
-        src: 'certificate.sh.j2'
-        dest: '/usr/local/bin/create_certificate.sh'
-        owner: 'root'
-        group: 'root'
-        mode: '0755'
-      notify:
-        - 'Restart the teleport service'
-
     - name: 'create directory /var/lib/teleport/'
       file:
         path: '/var/lib/teleport/'
@@ -27,13 +17,6 @@
         owner: 'root'
         group: 'root'
         mode: '0755'
-
-    - name: 'create certificate'
-      command:
-        cmd: '/usr/local/bin/create_certificate.sh'
-        creates: '/var/lib/teleport/fullchain.pem'
-      notify:
-        - 'Restart the teleport service'
 
     - name: 'Create /etc/teleport.yaml'
       template:
