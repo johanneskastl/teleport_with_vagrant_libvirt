@@ -12,7 +12,7 @@ teleport:
 auth_service:
   enabled: "yes"
   listen_addr: 0.0.0.0:3025
-  cluster_name: {{ ansible_default_ipv4.address|default(ansible_all_ipv4_addresses[0]) }}
+  cluster_name: teleport_with_vagrant_libvirt
   proxy_listener_mode: multiplex
   authentication:
     second_factor: off
