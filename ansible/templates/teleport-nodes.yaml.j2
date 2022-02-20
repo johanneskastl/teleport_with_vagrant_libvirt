@@ -1,0 +1,20 @@
+version: v2
+teleport:
+  nodename: {{ inventory_hostname }}
+  data_dir: /var/lib/teleport
+  log:
+    output: stderr
+    severity: INFO
+    format:
+      output: text
+  auth_token: "very_insecure_token_that_should_not_be_used"
+  auth_servers:
+    - {{ hostvars['teleport-server']['ansible_default_ipv4']['address'] }}:3025
+ssh_service:
+  enabled: "yes"
+  labels:
+    env: example
+  commands:
+  - name: hostname
+    command: [hostname]
+    period: 1m0s
