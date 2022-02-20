@@ -1,0 +1,15 @@
+- name: 'Create CA on Ansible control host'
+  hosts: 'localhost'
+  gather_facts: 'yes'
+  become: 'false'
+
+  roles:
+    - role: 'selfsigned_demo_ca'
+      vars:
+        generate_demo_ca: 'true'
+        create_certs_for_hosts: 'false'
+        # Variables for the CA
+        ca_key_file: 'teleport-demo_ca.key'
+        ca_crt_file: 'teleport-demo_ca.crt'
+        ca_target_folder: 'Teleport_demo_CA/'
+        ca_key_passphrase: 'somethingtotallysecret'
