@@ -14,7 +14,11 @@ ssh_service:
   enabled: "yes"
   labels:
     env: example
+    type: node
   commands:
   - name: hostname
     command: [hostname]
     period: 1m0s
+  - name: operating_system
+    command: ["bash", "-c", "awk -F'=' '/^PRETTY/ {print $2}' /etc/os-release"]
+    period: 30m
