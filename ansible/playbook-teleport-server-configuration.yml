@@ -5,6 +5,14 @@
 
   tasks:
 
+    - name: 'Copy teleport-demo_ca.crt to node'
+      copy:
+        src: 'Teleport_demo_CA/teleport-demo_ca.crt'
+        dest: '/etc/pki/trust/anchors/teleport-demo_ca.crt'
+        owner: 'root'
+        group: 'root'
+        mode: '0644'
+
     - name: 'Install teleport-tctl package'
       package:
         name: 'teleport-tctl'
