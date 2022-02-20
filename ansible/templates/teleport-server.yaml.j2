@@ -26,6 +26,9 @@ ssh_service:
   - name: hostname
     command: [hostname]
     period: 1m0s
+  - name: operating_system
+    command: ["bash", "-c", "awk -F'=' '/^PRETTY/ {print $2}' /etc/os-release"]
+    period: 30m
 proxy_service:
   enabled: "yes"
   web_listen_addr: 0.0.0.0:443
