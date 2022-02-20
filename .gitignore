@@ -3,3 +3,6 @@
 #
 .vagrant
 Vagrantfile.1
+
+# ignore the directory with the self-signed CA on localhost
+ansible/Teleport_demo_CA/
