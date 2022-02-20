@@ -10,6 +10,12 @@ teleport:
   auth_token: "very_insecure_token_that_should_not_be_used"
   auth_servers:
     - {{ hostvars['teleport-server']['ansible_default_ipv4']['address'] }}:443
+auth_service:
+  enabled: "no"
+proxy_service:
+  enabled: "no"
+app_service:
+  enabled: "no"
 ssh_service:
   enabled: "yes"
   labels:
