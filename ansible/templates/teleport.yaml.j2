@@ -31,6 +31,6 @@ proxy_service:
   web_listen_addr: 0.0.0.0:443
   public_addr: {{ ansible_default_ipv4.address|default(ansible_all_ipv4_addresses[0]) }}:443
   https_keypairs:
-  - key_file: /var/lib/teleport/privkey.pem
-    cert_file: /var/lib/teleport/fullchain.pem
+  - key_file: /var/lib/teleport/teleport-server.key
+    cert_file: /var/lib/teleport/teleport-server.crt
   acme: {}
