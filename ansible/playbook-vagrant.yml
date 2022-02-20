@@ -31,7 +31,6 @@
         ca_target_folder: 'Teleport_demo_CA/'
         ca_key_passphrase: 'somethingtotallysecret'
         # Variables for the host
-        host_certs_target_folder: '/var/lib/teleport/'
         certs_file_user: 'root'
         certs_file_group: 'root'
         create_certs_for_hosts: 'true'
