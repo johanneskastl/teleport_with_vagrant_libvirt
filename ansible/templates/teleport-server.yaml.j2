@@ -22,6 +22,7 @@ ssh_service:
   enabled: "yes"
   labels:
     env: example
+    type: server
   commands:
   - name: hostname
     command: [hostname]
