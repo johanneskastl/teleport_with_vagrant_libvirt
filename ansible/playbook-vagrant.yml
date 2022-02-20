@@ -17,6 +17,6 @@
           - 'teleport-tsh'
           - 'hostname'
 
-- name: 'Include teleport-server playbook'
-  import_playbook: playbook-teleport-server.yml
+- name: 'Include teleport-server-configuration playbook'
+  import_playbook: playbook-teleport-server-configuration.yml
   when: 'inventory_hostname == "teleport-server"'
