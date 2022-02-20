@@ -13,6 +13,15 @@ Default OS is openSUSE Leap 15.3, but that can be changed in the Vagrantfile. Pl
 5. Run `vagrant up`
 6. Party!
 
+To create your first user, you need to log in on the teleport-server node via `vagrant ssh teleport-server` and create a user:
+```
+tctl users add first_user --roles auditor,editor,access --logins root,vagrant
+```
+
+After that you can open the teleport-server's IP address in your browser, ignore the warning due to the self-signed certificate and log in as that user.
+You should see three "servers" in the "Server" tab.
+Tadaa!
+
 ## Disabling the Ansible provisioning
 
 In case you do not want Ansible to install teleport (because you want to install it yourself), just comment out the following lines in the `Vagrantfile`:
