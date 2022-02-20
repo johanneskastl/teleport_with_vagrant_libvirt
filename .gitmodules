@@ -16,3 +16,6 @@
 [submodule "ansible/roles/selfsigned_demo_ca"]
 	path = ansible/roles/selfsigned_demo_ca
 	url = https://github.com/johanneskastl/ansible-role-selfsigned_demo_ca.git
+[submodule "ansible/roles/minimal_bashrc"]
+	path = ansible/roles/minimal_bashrc
+	url = https://github.com/johanneskastl/ansible-role-minimal_bashrc.git
