@@ -1,6 +1,0 @@
-#!/bin/bash
-
-openssl req -x509 -newkey rsa:4096 -nodes -sha256 -days 365 \
-	-keyout /var/lib/teleport/privkey.pem \
-	-out /var/lib/teleport/fullchain.pem \
-	-subj '/CN={{ ansible_default_ipv4.address|default(ansible_all_ipv4_addresses[0]) }}'
