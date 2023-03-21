@@ -25,6 +25,9 @@
         enable_auth_service: true
         enable_proxy_service: true
         enable_ssh_service: true
+        enable_windows_desktop_service: false
+        enable_db_service: false
+        enable_kubernetes_service: false
         enable_app_service: false
         auth_service_authentication:
           second_factor: 'off'
