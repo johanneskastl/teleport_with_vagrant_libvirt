@@ -25,6 +25,9 @@
         enable_proxy_service: false
         enable_ssh_service: true
         enable_app_service: false
+        enable_windows_desktop_service: false
+        enable_db_service: false
+        enable_kubernetes_service: false
         auth_token: '"very_insecure_token_that_should_not_be_used"'
         auth_servers:
           - "{{ hostvars['teleport-server']['ansible_default_ipv4']['address'] }}:443"
