@@ -25,3 +25,6 @@
 [submodule "ansible/roles/configure_and_start_teleport"]
 	path = ansible/roles/configure_and_start_teleport
 	url = https://github.com/johanneskastl/ansible-role-configure_and_start_teleport.git
+[submodule "ansible/roles/johanneskastl.reboot"]
+	path = ansible/roles/johanneskastl.reboot
+	url = https://github.com/johanneskastl/ansible-role-reboot.git
