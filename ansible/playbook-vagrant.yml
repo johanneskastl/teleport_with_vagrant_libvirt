@@ -46,14 +46,14 @@
           - 'teleport-tsh'
           - 'hostname'
 
-- name: 'Include playbook-teleport_server-generate_certificate.yml'
+- name: 'Run playbook-teleport_server-generate_certificate.yml'
   import_playbook: playbook-teleport_server-generate_certificate.yml
   when: 'inventory_hostname == "teleport-server"'
 
-- name: 'Include teleport_server-configuration playbook'
+- name: 'Run playbook-teleport_server-configuration.yml'
   import_playbook: playbook-teleport_server-configuration.yml
   when: 'inventory_hostname == "teleport-server"'
 
-- name: 'Include teleport-nodes-configuration playbook'
+- name: 'Run playbook-teleport-nodes-configuration.yml'
   import_playbook: playbook-teleport-nodes-configuration.yml
   when: 'inventory_hostname != "teleport-server"'
