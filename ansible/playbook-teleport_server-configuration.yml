@@ -6,7 +6,7 @@
   pre_tasks:
 
     - name: 'Copy teleport-demo_ca.crt to node'
-      copy:
+      ansible.builtin.copy:
         src: 'Teleport_demo_CA/teleport-demo_ca.crt'
         dest: '/etc/pki/trust/anchors/teleport-demo_ca.crt'
         owner: 'root'
@@ -14,7 +14,7 @@
         mode: '0644'
 
     - name: 'Install teleport-tctl package'
-      package:
+      ansible.builtin.package:
         name: 'teleport-tctl'
         state: 'installed'
 
@@ -34,8 +34,8 @@
         auth_service_tokens:
           - '"node:very_insecure_token_that_should_not_be_used"'
         labels:
-            env: 'example'
-            type: 'server'
+          env: 'example'
+          type: 'server'
         commands:
           - name: 'hostname'
             command: '[hostname]'
