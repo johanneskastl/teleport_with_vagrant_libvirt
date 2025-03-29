@@ -25,3 +25,6 @@
 [submodule "ansible/roles/johanneskastl.start_and_or_enable_systemd_service"]
 	path = ansible/roles/johanneskastl.start_and_or_enable_systemd_service
 	url = https://github.com/johanneskastl/ansible-role-start_and_or_enable_systemd_service.git
+[submodule "ansible/roles/johanneskastl.zypper_ref_accept_keys"]
+	path = ansible/roles/johanneskastl.zypper_ref_accept_keys
+	url = https://github.com/johanneskastl/ansible-role-zypper_ref_accept_keys.git
