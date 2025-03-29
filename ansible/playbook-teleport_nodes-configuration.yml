@@ -1,12 +1,12 @@
 - name: 'Gather facts'
   hosts: 'all'
-  gather_facts: 'yes'
-  become: 'true'
+  gather_facts: true
+  become: true
 
 - name: 'Configure the teleport-node machines'
   hosts: 'teleport_nodes'
-  gather_facts: 'yes'
-  become: 'true'
+  gather_facts: true
+  become: true
 
   pre_tasks:
 
