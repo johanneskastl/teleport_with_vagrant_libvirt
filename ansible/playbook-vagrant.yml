@@ -24,24 +24,9 @@
       vars:
         additional_users: "{{ ansible_user }}"
 
-- name: 'Create certificate for teleport-server'
-  hosts: 'teleport-server'
-  gather_facts: 'yes'
-  become: 'true'
-  roles:
-    - role: 'selfsigned_demo_ca'
-      vars:
-        # Variables for the CA
-        ca_key_file: 'teleport-demo_ca.key'
-        ca_csr_file: 'teleport-demo_ca.csr'
-        ca_crt_file: 'teleport-demo_ca.crt'
-        ca_target_folder: 'Teleport_demo_CA/'
-        ca_key_passphrase: 'somethingtotallysecret'
-        # Variables for the host
-        certs_file_user: 'root'
-        certs_file_group: 'root'
-        create_certs_for_hosts: 'true'
-        use_IP_address_only: 'true'
+- name: 'Include playbook-teleport-server-generate_certificate.yml'
+  import_playbook: playbook-teleport-server-generate_certificate.yml
+  when: 'inventory_hostname == "teleport-server"'
 
 - name: 'Include teleport-server-configuration playbook'
   import_playbook: playbook-teleport-server-configuration.yml
