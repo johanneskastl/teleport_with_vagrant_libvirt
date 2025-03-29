@@ -54,6 +54,6 @@
   import_playbook: playbook-teleport_server-configuration.yml
   when: 'inventory_hostname == "teleport-server"'
 
-- name: 'Run playbook-teleport-nodes-configuration.yml'
-  import_playbook: playbook-teleport-nodes-configuration.yml
+- name: 'Run playbook-teleport_nodes-configuration.yml'
+  import_playbook: playbook-teleport_nodes-configuration.yml
   when: 'inventory_hostname != "teleport-server"'
