@@ -19,7 +19,7 @@
         mode: '0644'
 
   roles:
-    - role: 'configure_and_start_teleport/'
+    - role: 'johanneskastl.configure_and_start_teleport'
       vars:
         enable_auth_service: false
         enable_proxy_service: false
