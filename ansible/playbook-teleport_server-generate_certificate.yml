@@ -6,7 +6,7 @@
   become: true
 
   roles:
-    - role: 'selfsigned_demo_ca'
+    - role: 'johanneskastl.selfsigned_demo_ca'
       vars:
         # Variables for the CA
         ca_key_file: 'teleport-demo_ca.key'
