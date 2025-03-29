@@ -1,0 +1,13 @@
+---
+- name: 'Install teleport and teleport-tsh'
+  hosts: 'all'
+  gather_facts: true
+  become: true
+
+  roles:
+
+    - role: 'johanneskastl.install_one_or_more_packages'
+      packages_to_be_installed:
+        - 'teleport'
+        - 'teleport-tsh'
+        - 'hostname'
