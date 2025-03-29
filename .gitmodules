@@ -31,3 +31,6 @@
 [submodule "ansible/roles/johanneskastl.selfsigned_demo_ca"]
 	path = ansible/roles/johanneskastl.selfsigned_demo_ca
 	url = https://github.com/johanneskastl/ansible-role-selfsigned_demo_ca.git
+[submodule "ansible/roles/johanneskastl.configure_and_start_teleport"]
+	path = ansible/roles/johanneskastl.configure_and_start_teleport
+	url = https://github.com/johanneskastl/ansible-role-configure_and_start_teleport.git
