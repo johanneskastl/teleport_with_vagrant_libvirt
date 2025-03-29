@@ -28,25 +28,6 @@ For testing, the two-factor-authentication is disabled, you can enable it by com
     second_factor: off
 ```
 
-## Disabling the Ansible provisioning
-
-In case you do not want Ansible to install teleport (because you want to install it yourself), just comment out the following lines in the `Vagrantfile`:
-```
-    node.vm.provision "ansible" do |ansible|
-      ansible.compatibility_mode = "2.0"
-      ansible.limit = "all"
-      ansible.groups = {
-        "teleport_servers"  => [ "teleport-server" ],
-        "teleport_nodes"   => [ "teleportnode1", "teleportnode2" ]
-      }
-      ansible.playbook = "ansible/playbook-vagrant.yml"
-    end # node.vm.provision
-```
-
-## Cleaning up
-
-When tearing down the machines, the files for the self-signed SSL CA are not being deleted automatically. You can remove them, if you do no longer need them, by using `rm -r ansible/Teleport_demo_CA/`.
-
 ## Creating additional agent nodes
 
 You can modify the Vagrantfile to create additional agent nodes by tweaking two lines.
@@ -66,3 +47,7 @@ You can modify the Vagrantfile to create additional agent nodes by tweaking two 
         "teleport_nodes"   => [ "teleportnode1", "teleportnode2" ]
       }
 ```
+
+## Cleaning up
+
+When tearing down the machines, the files for the self-signed SSL CA are not being deleted automatically. You can remove them, if you do no longer need them, by using `rm -r ansible/Teleport_demo_CA/`.
