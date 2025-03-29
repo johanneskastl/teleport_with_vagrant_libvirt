@@ -11,7 +11,7 @@
   pre_tasks:
 
     - name: 'Copy teleport-demo_ca.crt to node'
-      copy:
+      ansible.builtin.copy:
         src: 'Teleport_demo_CA/teleport-demo_ca.crt'
         dest: '/etc/pki/trust/anchors/teleport-demo_ca.crt'
         owner: 'root'
@@ -32,8 +32,8 @@
         auth_servers:
           - "{{ hostvars['teleport-server']['ansible_default_ipv4']['address'] }}:443"
         labels:
-            env: 'example'
-            type: 'node'
+          env: 'example'
+          type: 'node'
         commands:
           - name: 'hostname'
             command: '[hostname]'
