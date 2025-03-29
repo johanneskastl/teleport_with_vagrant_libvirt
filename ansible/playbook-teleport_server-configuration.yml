@@ -19,7 +19,7 @@
         state: 'installed'
 
   roles:
-    - role: 'configure_and_start_teleport/'
+    - role: 'johanneskastl.configure_and_start_teleport'
       vars:
         cluster_name: 'teleport_with_vagrant_libvirt'
         enable_auth_service: true
