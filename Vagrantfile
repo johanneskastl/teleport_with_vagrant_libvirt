@@ -52,11 +52,11 @@ Vagrant.configure("2") do |config|
       ansible.compatibility_mode = "2.0"
       ansible.limit = "all"
       ansible.groups = {
-        "teleport_nodes"   => [ "teleport-node1", "teleport-node2" ]
+        "teleport_nodes"  => [ "teleport-node1", "teleport-node2" ]
       }
       ansible.playbook = "ansible/playbook-vagrant.yml"
     end # node.vm.provision
 
-  end # config.vm.define servers
+  end # config.vm.define teleport-server
 
 end # Vagrant.configure
