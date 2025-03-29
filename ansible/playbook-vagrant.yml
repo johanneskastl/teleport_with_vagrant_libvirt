@@ -50,8 +50,8 @@
   import_playbook: playbook-teleport_server-generate_certificate.yml
   when: 'inventory_hostname == "teleport-server"'
 
-- name: 'Include teleport-server-configuration playbook'
-  import_playbook: playbook-teleport-server-configuration.yml
+- name: 'Include teleport_server-configuration playbook'
+  import_playbook: playbook-teleport_server-configuration.yml
   when: 'inventory_hostname == "teleport-server"'
 
 - name: 'Include teleport-nodes-configuration playbook'
