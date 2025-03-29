@@ -50,4 +50,14 @@ You can modify the Vagrantfile to create additional agent nodes by tweaking two 
 
 ## Cleaning up
 
-When tearing down the machines, the files for the self-signed SSL CA are not being deleted automatically. You can remove them, if you do no longer need them, by using `rm -r ansible/Teleport_demo_CA/`.
+When tearing down the machines, the files for the self-signed SSL CA are not
+being deleted automatically. You can remove them, if you do no longer need them,
+by using `rm -r ansible/Teleport_demo_CA/`.
+
+## License
+
+BSD-3-Clause
+
+## Author Information
+
+I am Johannes Kastl, reachable via git@johannes-kastl.de
