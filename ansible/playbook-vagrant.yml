@@ -46,8 +46,8 @@
           - 'teleport-tsh'
           - 'hostname'
 
-- name: 'Include playbook-teleport-server-generate_certificate.yml'
-  import_playbook: playbook-teleport-server-generate_certificate.yml
+- name: 'Include playbook-teleport_server-generate_certificate.yml'
+  import_playbook: playbook-teleport_server-generate_certificate.yml
   when: 'inventory_hostname == "teleport-server"'
 
 - name: 'Include teleport-server-configuration playbook'
