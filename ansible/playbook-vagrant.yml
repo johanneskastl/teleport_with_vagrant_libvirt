@@ -14,6 +14,9 @@
 - name: 'Run playbook-all_nodes-create_a_vimrc.yml'
   ansible.builtin.import_playbook: playbook-all_nodes-create_a_vimrc.yml
 
+- name: 'Run playbook-all_nodes-minimal_bashrc.yml'
+  ansible.builtin.import_playbook: playbook-all_nodes-minimal_bashrc.yml
+
 - name: 'Add home_ojkastl_buildservice_teleport repository containing teleport'
   hosts: 'teleport_servers,teleport_nodes'
   gather_facts: 'yes'
@@ -32,9 +35,6 @@
           - 'teleport'
           - 'teleport-tsh'
           - 'hostname'
-    - role: 'minimal_bashrc'
-      vars:
-        additional_users: "{{ ansible_user }}"
 
 - name: 'Include playbook-teleport-server-generate_certificate.yml'
   import_playbook: playbook-teleport-server-generate_certificate.yml
