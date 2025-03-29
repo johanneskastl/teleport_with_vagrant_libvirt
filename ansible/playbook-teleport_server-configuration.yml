@@ -1,7 +1,7 @@
 - name: 'Create script and configuration on teleport-server'
   hosts: 'teleport-server'
-  gather_facts: 'yes'
-  become: 'true'
+  gather_facts: true
+  become: true
 
   pre_tasks:
 
