@@ -1,3 +1,6 @@
 [submodule "helpers"]
 	path = helpers
 	url = https://github.com/johanneskastl/helpers.git
+[submodule "ansible/roles/johanneskastl.add_screenrc"]
+	path = ansible/roles/johanneskastl.add_screenrc
+	url = https://github.com/johanneskastl/ansible-role-add_screenrc.git
