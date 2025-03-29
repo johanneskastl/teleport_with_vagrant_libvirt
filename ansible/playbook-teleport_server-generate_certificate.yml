@@ -18,5 +18,5 @@
         certs_file_user: 'root'
         certs_file_group: 'root'
         create_certs_for_hosts: 'true'
-        use_IP_address_only: 'true'
+        use_ip_address_only: 'true'
 
