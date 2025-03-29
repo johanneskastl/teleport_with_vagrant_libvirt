@@ -1,9 +1,10 @@
 - name: 'Create CA on Ansible control host'
   hosts: 'localhost'
-  gather_facts: 'yes'
-  become: 'false'
+  gather_facts: true
+  become: false
 
   roles:
+
     - role: 'selfsigned_demo_ca'
       vars:
         generate_demo_ca: 'true'
