@@ -2,8 +2,9 @@
 
 - name: 'Create certificate for teleport-server'
   hosts: 'teleport-server'
-  gather_facts: 'yes'
-  become: 'true'
+  gather_facts: true
+  become: true
+
   roles:
     - role: 'selfsigned_demo_ca'
       vars:
