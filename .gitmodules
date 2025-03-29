@@ -22,3 +22,6 @@
 [submodule "ansible/roles/johanneskastl.reboot"]
 	path = ansible/roles/johanneskastl.reboot
 	url = https://github.com/johanneskastl/ansible-role-reboot.git
+[submodule "ansible/roles/johanneskastl.start_and_or_enable_systemd_service"]
+	path = ansible/roles/johanneskastl.start_and_or_enable_systemd_service
+	url = https://github.com/johanneskastl/ansible-role-start_and_or_enable_systemd_service.git
