@@ -13,8 +13,6 @@ with openSUSE Leap 15.6.
    `vagrant box add opensuse/Leap-15.6.x86_64`.
 1. Make sure the git submodules are fully working by issuing `git submodule init
    && git submodule update`
-1. Create the SSL CA on the ansible control node (where you run vagrant):
-   `ansible-playbook ansible/playbook-localhost-selfsigned_demo_ca.yml`
 1. Run `vagrant up`
 1. Party!
 
