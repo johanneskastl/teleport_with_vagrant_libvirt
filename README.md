@@ -9,14 +9,14 @@ with openSUSE Leap 15.6.
 ## Vagrant
 
 1. You need vagrant obviously. And ansible. And git...
-2. Fetch the box, per default this is `opensuse/Leap-15.6.x86_64`, using
+1. Fetch the box, per default this is `opensuse/Leap-15.6.x86_64`, using
    `vagrant box add opensuse/Leap-15.6.x86_64`.
-3. Make sure the git submodules are fully working by issuing `git submodule init
+1. Make sure the git submodules are fully working by issuing `git submodule init
    && git submodule update`
-4. Create the SSL CA on the ansible control node (where you run vagrant):
+1. Create the SSL CA on the ansible control node (where you run vagrant):
    `ansible-playbook ansible/playbook-localhost-selfsigned_demo_ca.yml`
-5. Run `vagrant up`
-6. Party!
+1. Run `vagrant up`
+1. Party!
 
 To create your first user, you need to log in on the teleport-server node via
 `vagrant ssh teleport-server` and create a user:
