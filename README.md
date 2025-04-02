@@ -60,9 +60,8 @@ lines.
 
 ## Cleaning up
 
-When tearing down the machines, the files for the self-signed SSL CA are not
-being deleted automatically. You can remove them, if you do no longer need them,
-by using `rm -r ansible/Teleport_demo_CA/`.
+The VMs can be torn down after playing around using `vagrant destroy`. This will
+also remove the files for the demo CA in `ansible/Teleport_demo_CA/`.
 
 ## License
 
