@@ -8,6 +8,13 @@
   ansible.builtin.import_playbook: playbook-all_nodes-bootstrap_python.yml
 
 #
+# create CA on localhost
+#
+
+- name: 'Run playbook-localhost-selfsigned_demo_ca.yml'
+  ansible.builtin.import_playbook: playbook-localhost-selfsigned_demo_ca.yml
+
+#
 # general configuration
 #
 
