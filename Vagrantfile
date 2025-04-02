@@ -57,6 +57,11 @@ Vagrant.configure("2") do |config|
       ansible.playbook = "ansible/playbook-vagrant.yml"
     end # node.vm.provision
 
+    node.trigger.after :destroy do |trigger|
+      trigger.warn = "Removing ansible/Teleport_demo_CA/"
+      trigger.run = {inline: "rm -vrf ansible/Teleport_demo_CA/"}
+    end # node.trigger.after
+
   end # config.vm.define teleport-server
 
 end # Vagrant.configure
