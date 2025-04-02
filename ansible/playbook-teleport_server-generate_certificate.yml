@@ -8,6 +8,7 @@
   roles:
     - role: 'johanneskastl.selfsigned_demo_ca'
       vars:
+        install_packages: true
         # Variables for the CA
         ca_key_file: 'teleport-demo_ca.key'
         ca_csr_file: 'teleport-demo_ca.csr'
