@@ -2,27 +2,38 @@
 
 This Vagrant setup creates a teleport-server VM and two VMs as "nodes".
 
-Default OS is openSUSE Leap 15.6, but that can be changed in the Vagrantfile. Please beware, this might break the ansible provisioning which was only tested with openSUSE Leap 15.6.
+Default OS is openSUSE Leap 15.6, but that can be changed in the Vagrantfile.
+Please beware, this might break the ansible provisioning which was only tested
+with openSUSE Leap 15.6.
 
 ## Vagrant
 
 1. You need vagrant obviously. And ansible. And git...
-2. Fetch the box, per default this is `opensuse/Leap-15.6.x86_64`, using `vagrant box add opensuse/Leap-15.6.x86_64`.
-3. Make sure the git submodules are fully working by issuing `git submodule init && git submodule update`
-4. Create the SSL CA on the ansible control node (where you run vagrant): `ansible-playbook ansible/playbook-localhost-selfsigned_demo_ca.yml`
+2. Fetch the box, per default this is `opensuse/Leap-15.6.x86_64`, using
+   `vagrant box add opensuse/Leap-15.6.x86_64`.
+3. Make sure the git submodules are fully working by issuing `git submodule init
+   && git submodule update`
+4. Create the SSL CA on the ansible control node (where you run vagrant):
+   `ansible-playbook ansible/playbook-localhost-selfsigned_demo_ca.yml`
 5. Run `vagrant up`
 6. Party!
 
-To create your first user, you need to log in on the teleport-server node via `vagrant ssh teleport-server` and create a user:
+To create your first user, you need to log in on the teleport-server node via
+`vagrant ssh teleport-server` and create a user:
+
 ```
 tctl users add first_user --roles auditor,editor,access --logins root,vagrant
 ```
 
-After that you can open the teleport-server's IP address in your browser, ignore the warning due to the self-signed certificate and log in as that user.
+After that you can open the teleport-server's IP address in your browser, ignore
+the warning due to the self-signed certificate and log in as that user.
 You should see three "servers" in the "Server" tab.
 Tadaa!
 
-For testing, the two-factor-authentication is disabled, you can enable it by commenting out the following lines in the `teleport.yaml` on the teleport-server:
+For testing, the two-factor-authentication is disabled, you can enable it by
+commenting out the following lines in the `teleport.yaml` on the
+teleport-server:
+
 ```
   authentication:
     second_factor: off
@@ -30,7 +41,8 @@ For testing, the two-factor-authentication is disabled, you can enable it by com
 
 ## Creating additional agent nodes
 
-You can modify the Vagrantfile to create additional agent nodes by tweaking two lines.
+You can modify the Vagrantfile to create additional agent nodes by tweaking two
+lines.
 
 1. Setting the number of agents (in this example to `2`):
 
