@@ -1,11 +1,14 @@
+---
+
 - name: 'Create CA on Ansible control host'
-  hosts: 'localhost'
+  hosts: 'teleport-server'
   gather_facts: true
   become: false
 
   roles:
 
     - role: 'johanneskastl.selfsigned_demo_ca'
+      delegate_to: 'localhost'
       vars:
         generate_demo_ca: 'true'
         create_certs_for_hosts: 'false'
