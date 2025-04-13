@@ -42,6 +42,7 @@ lines.
 ```
 
 2. Adding the additional agent nodes to the `ansible_groups` line:
+
 ```
       ansible.groups = {
         "teleport_servers"  => [ "teleport-server" ],
