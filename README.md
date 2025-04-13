@@ -28,15 +28,6 @@ the warning due to the self-signed certificate and log in as that user.
 You should see three "servers" in the "Server" tab.
 Tadaa!
 
-For testing, the two-factor-authentication is disabled, you can enable it by
-commenting out the following lines in the `teleport.yaml` on the
-teleport-server:
-
-```
-  authentication:
-    second_factor: off
-```
-
 ## Creating additional agent nodes
 
 You can modify the Vagrantfile to create additional agent nodes by tweaking two
