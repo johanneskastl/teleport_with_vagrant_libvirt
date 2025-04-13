@@ -41,7 +41,7 @@ lines.
   W = 2
 ```
 
-2. Adding the additional agent nodes to the `ansible_groups` line:
+1. Adding the additional agent nodes to the `ansible_groups` line:
 
 ```
       ansible.groups = {
