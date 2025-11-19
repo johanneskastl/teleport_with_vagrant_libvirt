@@ -29,8 +29,6 @@
         enable_db_service: false
         enable_kubernetes_service: false
         enable_app_service: false
-        auth_service_authentication:
-          second_factor: 'off'
         auth_service_tokens:
           - '"node:very_insecure_token_that_should_not_be_used"'
         labels:
