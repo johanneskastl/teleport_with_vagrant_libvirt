@@ -46,7 +46,6 @@
 
 - name: Run playbook-teleport_server-generate_certificate.yml
   import_playbook: playbook-teleport_server-generate_certificate.yml
-  when: inventory_hostname == "teleport-server"
 
 - name: Run playbook-teleport_server-configuration.yml
   import_playbook: playbook-teleport_server-configuration.yml
