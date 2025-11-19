@@ -57,3 +57,10 @@
 
 - name: 'Run playbook-teleport_nodes-configuration.yml'
   import_playbook: playbook-teleport_nodes-configuration.yml
+
+#
+# Output the Teleport server URL
+#
+
+- name: 'Run playbook-teleport_server-output_URLs.yml'
+  import_playbook: playbook-teleport_server-output_URLs.yml
