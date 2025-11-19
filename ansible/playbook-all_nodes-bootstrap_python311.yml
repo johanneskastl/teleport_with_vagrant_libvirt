@@ -1,17 +1,17 @@
 ---
-- name: 'Bootstrap Python3.11'
-  hosts: 'all'
+- name: Bootstrap Python3.11
+  hosts: all
   gather_facts: false
   become: true
 
   tasks:
 
-    - name: 'Update repository metadata'
+    - name: Update repository metadata
       ansible.builtin.raw: LANG=C zypper -n refresh
       register: zypper_refresh_output
       changed_when: "'Retrieving repository' in zypper_refresh_output.stdout"
 
-    - name: 'Bootstrap python'
+    - name: Bootstrap python
       ansible.builtin.raw: LANG=C zypper -n install python311
       register: zypper_install_output
       changed_when:
