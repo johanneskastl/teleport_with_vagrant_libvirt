@@ -2,9 +2,9 @@
 
 This Vagrant setup creates a teleport-server VM and two VMs as "nodes".
 
-Default OS is openSUSE Leap 15.6, but that can be changed in the Vagrantfile.
+Default OS is openSUSE Tumbleweed, but that can be changed in the Vagrantfile.
 Please beware, this might break the ansible provisioning which was only tested
-with openSUSE Leap 15.6.
+with openSUSE Tumbleweed.
 
 ## Vagrant
 
