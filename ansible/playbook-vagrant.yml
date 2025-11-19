@@ -4,63 +4,63 @@
 # bootstrap python3.11
 #
 
-- name: 'Run playbook-all_nodes-bootstrap_python.yml'
+- name: Run playbook-all_nodes-bootstrap_python.yml
   ansible.builtin.import_playbook: playbook-all_nodes-bootstrap_python.yml
 
 #
 # create CA on localhost
 #
 
-- name: 'Run playbook-localhost-selfsigned_demo_ca.yml'
+- name: Run playbook-localhost-selfsigned_demo_ca.yml
   ansible.builtin.import_playbook: playbook-localhost-selfsigned_demo_ca.yml
 
 #
 # general configuration
 #
 
-- name: 'Run playbook-all_nodes-create_a_vimrc.yml'
+- name: Run playbook-all_nodes-create_a_vimrc.yml
   ansible.builtin.import_playbook: playbook-all_nodes-create_a_vimrc.yml
 
-- name: 'Run playbook-all_nodes-install_tmux.yml'
+- name: Run playbook-all_nodes-install_tmux.yml
   ansible.builtin.import_playbook: playbook-all_nodes-install_tmux.yml
 
-- name: 'Run playbook-all_nodes-minimal_tmux_configuration.yml'
+- name: Run playbook-all_nodes-minimal_tmux_configuration.yml
   ansible.builtin.import_playbook: playbook-all_nodes-minimal_tmux_configuration.yml
 
-- name: 'Run playbook-all_nodes-minimal_bashrc.yml'
+- name: Run playbook-all_nodes-minimal_bashrc.yml
   ansible.builtin.import_playbook: playbook-all_nodes-minimal_bashrc.yml
 
 #
 # Teleport
 #
 
-- name: 'Run playbook-all_nodes-add_Branch_devel_kubic_repo.yml'
+- name: Run playbook-all_nodes-add_Branch_devel_kubic_repo.yml
   ansible.builtin.import_playbook: playbook-all_nodes-add_Branch_devel_kubic_repo.yml
 
-- name: 'Run playbook-all_nodes-install_teleport.yml'
+- name: Run playbook-all_nodes-install_teleport.yml
   ansible.builtin.import_playbook: playbook-all_nodes-install_teleport.yml
 
 #
 # Teleport server
 #
 
-- name: 'Run playbook-teleport_server-generate_certificate.yml'
+- name: Run playbook-teleport_server-generate_certificate.yml
   import_playbook: playbook-teleport_server-generate_certificate.yml
-  when: 'inventory_hostname == "teleport-server"'
+  when: inventory_hostname == "teleport-server"
 
-- name: 'Run playbook-teleport_server-configuration.yml'
+- name: Run playbook-teleport_server-configuration.yml
   import_playbook: playbook-teleport_server-configuration.yml
 
 #
 # Teleport nodes
 #
 
-- name: 'Run playbook-teleport_nodes-configuration.yml'
+- name: Run playbook-teleport_nodes-configuration.yml
   import_playbook: playbook-teleport_nodes-configuration.yml
 
 #
 # Output the Teleport server URL
 #
 
-- name: 'Run playbook-teleport_server-output_URLs.yml'
+- name: Run playbook-teleport_server-output_URLs.yml
   import_playbook: playbook-teleport_server-output_URLs.yml
