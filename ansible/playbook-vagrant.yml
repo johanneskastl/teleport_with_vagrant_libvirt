@@ -4,8 +4,8 @@
 # bootstrap python3.11
 #
 
-- name: Run playbook-all_nodes-bootstrap_python.yml
-  ansible.builtin.import_playbook: playbook-all_nodes-bootstrap_python.yml
+- name: Run playbook-all_nodes-bootstrap_python311.yml
+  ansible.builtin.import_playbook: playbook-all_nodes-bootstrap_python311.yml
 
 #
 # create CA on localhost
