@@ -1,11 +1,11 @@
 ---
 
 #
-# bootstrap python3.11
+# bootstrap python3 on Tumbleweed
 #
 
-- name: Run playbook-all_nodes-bootstrap_python311.yml
-  ansible.builtin.import_playbook: playbook-all_nodes-bootstrap_python311.yml
+- name: Run playbook-all_nodes-bootstrap_python3.yml
+  ansible.builtin.import_playbook: playbook-all_nodes-bootstrap_python3.yml
 
 #
 # create CA on localhost
