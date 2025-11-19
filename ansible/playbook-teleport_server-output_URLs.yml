@@ -1,0 +1,22 @@
+---
+- name: Output the URLs
+  hosts: teleport-server
+  gather_facts: true
+  become: false
+
+  tasks:
+
+    - name: Output the Teleport URL
+      delegate_to: localhost
+      ansible.builtin.debug:
+        msg: "The Teleport server is reachable at https://{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}"
+
+    - name: Wait for the HTTPS URL to be available
+      delegate_to: localhost
+      ansible.builtin.uri:
+        url: "https://{{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}"
+        validate_certs: false
+      register: result
+      until: result.status == 200
+      retries: 31
+      delay: 10
